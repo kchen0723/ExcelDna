@@ -62,27 +62,11 @@ namespace ExcelDna.Integration
                 _mainWindowHandle = GetWindowHandleThread();
         }
 
-        public static bool IsMainThread
+        internal static bool IsMainThread
         {
             get
             {
                 return Thread.CurrentThread.ManagedThreadId == _mainManagedThreadId;
-            }
-        }
-
-        public static int MainManagedThreadId
-        {
-            get
-            {
-                return _mainManagedThreadId;
-            }
-        }
-
-        public static long MainNativeThreadId
-        {
-            get
-            {
-                return _mainNativeThreadId; //conver to long so that it is CLSCompliant.
             }
         }
 
